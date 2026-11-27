@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Runali's Tasty Bites - Best Food In Mumbai</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+  body{background:#fff8f0;text-align:center}
+  .header{background:#e63900;color:white;padding:22px;position:sticky;top:0;z-index:10}
+  .header h1{font-size:30px}
+  .header p{margin-top:5px}
+  .menu-bar{background:#222;padding:12px}
+  .menu-bar a{color:white;text-decoration:none;margin:0 12px;font-weight:bold}
+  .offer{background:#e63900;color:white;padding:12px;font-weight:bold}
+  .hero{padding:55px 20px;background:#ffcc00}
+  .hero h2{font-size:36px}
+  .hero p{margin:8px;font-size:17px}
+  .hero button{background:#e63900;color:white;border:none;padding:13px 30px;font-size:17px;font-weight:bold;border-radius:25px;cursor:pointer;margin:5px}
+  .section{padding:35px 15px}
+  .section h2{font-size:30px;margin-bottom:5px}
+  .owner{background:white;padding:25px;margin:20px auto;max-width:600px;border-radius:15px;box-shadow:0 0 10px #ccc;text-align:center}
+  .card{background:white;width:280px;display:inline-block;margin:10px;border-radius:15px;box-shadow:0 0 10px #ccc;padding-bottom:15px;vertical-align:top}
+  .card img{width:100%;height:170px;border-radius:15px 15px 0 0;object-fit:cover}
+  .card h3{margin-top:10px}
+  .card p{font-size:14px;color:#555;margin:5px}
+  .card button{background:#e63900;color:white;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-weight:bold}
+  .price{color:green;font-weight:bold;font-size:18px;margin:6px}
+  .gallery img{width:260px;height:170px;border-radius:15px;margin:6px;object-fit:cover}
+  .review{background:white;padding:20px;margin:12px auto;max-width:500px;border-radius:15px;box-shadow:0 0 8px #ddd}
+  .form{background:white;padding:25px;max-width:440px;margin:auto;border-radius:15px;text-align:left}
+  .form label{font-weight:bold;font-size:14px}
+  .form input,.form select,.form textarea{width:100%;padding:13px;margin:6px 0 10px;border:2px solid #ccc;border-radius:10px;font-size:15px}
+  .form input.error{border:2px solid red;background:#ffe6e6}
+  .form input.ok{border:2px solid green}
+  .error-text{color:red;font-size:13px;display:none}
+  .form button{background:#e63900;color:white;border:none;padding:13px;width:100%;border-radius:20px;font-size:17px;cursor:pointer;font-weight:bold}
+  #msg{font-weight:bold;text-align:center;margin-top:8px}
+  #cartBar{background:#222;color:white;padding:13px;position:fixed;bottom:0;width:100%;display:none;z-index:20}
+  #cartBar button{background:#25D366;color:white;border:none;padding:9px 18px;border-radius:20px;font-weight:bold;cursor:pointer;margin-left:10px}
+  .footer{background:#222;color:white;padding:20px;padding-bottom:75px}
+  .footer p{margin:5px}
+  .why{max-width:700px;margin:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+  .why div{background:white;padding:15px 20px;border-radius:12px;box-shadow:0 0 8px #ddd;font-weight:bold}
+</style>
+</head>
+<body>
+
+<div class="header"><h1>🍔 RUNALI'S TASTY BITES 🍕</h1><p>Best Food In Mumbai - By Runali</p></div>
+<div class="menu-bar"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#order">Order</a></div>
+<div class="offer">🔥 TODAY'S OFFER - 50% OFF On All Pizzas + FREE Delivery! 🔥</div>
+
+<div class="hero" id="home">
+<h2>Hi! I'm Runali 👋</h2>
+<h2>Swad Jo Yaad Rahe! 😋</h2>
+<p>Fresh | Tasty | Hygienic | 30 Min Delivery</p>
+<p><b>Timing:</b> 10 AM - 11 PM | <b>Location:</b> Mumbai</p><br>
+<button onclick="document.getElementById('menu').scrollIntoView()">Order Now 🍔</button>
+<button onclick="document.getElementById('order').scrollIntoView()" style="background:#222">Book Order</button>
+</div>
+
+<div class="owner">
+<h2>👩‍🍳 About Me - Runali</h2>
+<p style="margin-top:10px">Hello! My name is <b>Runali</b>. I love cooking. I made this website for my Food Business. Everything will be fresh, tasty and homemade!</p>
+<div class="why" style="margin-top:15px">
+<div>✅ 100% Fresh</div><div>🚚 30 Min Delivery</div><div>💰 Best Price</div><div>⭐ 4.9 Rating</div>
+</div>
+</div>
+
+<div class="section" id="menu">
+<h2>🍽️ Runali's Full Menu</h2>
+<p>Click on any item to add to Cart</p><br>
+<div class="card"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800"><h3>Veg Pizza</h3><p>Cheese, Capsicum, Onion, Tomato</p><p class="price">₹199 Only</p><button onclick="addCart('Veg Pizza',199)">Add To Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800"><h3>Special Burger</h3><p>Crispy Patty, Cheese, Mayo</p><p class="price">₹99 Only</p><button onclick="addCart('Special Burger',99)">Add To Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800"><h3>Veg Noodles</h3><p>Spicy Hakka Noodles</p><p class="price">₹129 Only</p><button onclick="addCart('Veg Noodles',129)">Add To Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d6?w=800"><h3>Paneer Tikka</h3><p>Smoky Paneer, Mint Chutney</p><p class="price">₹249 Only</p><button onclick="addCart('Paneer Tikka',249)">Add To Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=800"><h3>Masala Dosa</h3><p>Crispy Dosa, Sambar, Chutney</p><p class="price">₹89 Only</p><button onclick="addCart('Masala Dosa',89)">Add To Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800"><h3>Chocolate Shake</h3><p>Thick Shake + Ice Cream</p><p class="price">₹149 Only</p><button onclick="addCart('Chocolate Shake',149)">Add To Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800"><h3>Cheese Pasta</h3><p>Creamy White Sauce Pasta</p><p class="price">₹179 Only</p><button onclick="addCart('Cheese Pasta',179)">Add To Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800"><h3>Samosa Plate</h3><p>4 Pc Crispy Samosa + Chutney</p><p class="price">₹59 Only</p><button onclick="addCart('Samosa Plate',59)">Add To Cart</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800"><h3>Healthy Salad Bowl</h3><p>Fresh Veggies + Paneer</p><p class="price">₹149 Only</p><button onclick="addCart('Healthy Salad Bowl',149)">Add To Cart</button></div>
+</div>
+
+<div class="section" id="gallery" style="background:white">
+<h2>📸 Food Gallery</h2><br>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800">
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800">
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800">
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800">
+</div>
+</div>
+
+<div class="section" id="reviews">
+<h2>⭐ Customer Reviews</h2><br>
+<div class="review"><b>Ananya S. ⭐⭐⭐⭐⭐</b><p>"Pizza was very tasty! Runali's food is the best."</p></div>
+<div class="review"><b>Rahul M. ⭐⭐⭐⭐⭐</b><p>"Delivery in 30 minutes. Burger was very fresh."</p></div>
+<div class="review"><b>Sneha K. ⭐⭐⭐⭐⭐</b><p>"Homemade taste. This is now my favourite shop."</p></div>
+</div>
+
+<div class="section" id="order">
+<h2>🛵 Order Now - Free Delivery!</h2>
+<p style="margin:10px">Order will be placed only if number is <b>10 digits</b>. Less than 10 digits will not work!</p><br>
+<div class="form">
+<label>Your Name *</label>
+<input type="text" id="cname" placeholder="Ex: Runali">
+
+<label>Mobile Number * (Only 10 Digit)</label>
+<input type="tel" id="cphone" placeholder="Ex: 9876543210" maxlength="10" inputmode="numeric" oninput="checkNumber()">
+<p id="phoneError" class="error-text">❌ Number must be 10 digits! You entered less than 10 digits.</p>
+<p id="phoneOk" style="color:green;font-size:13px;display:none">✅ Number is correct!</p>
+
+<label>Full Address *</label>
+<textarea id="cadd" rows="2" placeholder="Full Address, Mumbai"></textarea>
+
+<label>Select Food</label>
+<select id="cfood">
+<option>Veg Pizza - ₹199</option>
+<option>Special Burger - ₹99</option>
+<option>Veg Noodles - ₹129</option>
+<option>Paneer Tikka - ₹249</option>
+<option>Masala Dosa - ₹89</option>
+<option>Chocolate Shake - ₹149</option>
+<option>Cheese Pasta - ₹179</option>
+<option>Samosa Plate - ₹59</option>
+<option>Healthy Salad Bowl - ₹149</option>
+</select>
+
+<label>Payment</label>
+<select id="cpay"><option>Cash On Delivery</option><option>UPI / GPay</option><option>Card</option></select>
+
+<button onclick="placeOrder()">Place Order ✅</button>
+<p id="msg"></p>
+<p id="orderDetails" style="text-align:center;margin-top:10px"></p>
+</div>
+</div>
+
+<div id="cartBar">🛒 <span id="cartText"></span> <button onclick="orderOnWhatsApp()">WhatsApp Order</button> <button onclick="clearCart()" style="background:#555">Clear</button></div>
+
+<div class="footer">
+<h3>🍔 RUNALI'S TASTY BITES</h3>
+<p>Mumbai, Maharashtra | Timing: 10 AM - 11 PM</p>
+<p>📞 Call / WhatsApp: 98765 43210 | Instagram: @runalis_tastybites</p>
+<p>© 2026 Runali's Tasty Bites | Made By Runali ❤️</p>
+</div>
+
+<script>
+let cart = [];
+let total = 0;
+function addCart(name, price){
+  cart.push(name); total += price;
+  document.getElementById('cartBar').style.display = 'block';
+  document.getElementById('cartText').innerText = cart.length + " items | Total: ₹" + total;
+  alert(name + " added to Cart! Total: ₹" + total);
+}
+function clearCart(){ cart = []; total = 0; document.getElementById('cartBar').style.display = 'none'; }
+function checkNumber(){
+  let phone = document.getElementById('cphone');
+  phone.value = phone.value.replace(/[^0-9]/g, '');
+  let err = document.getElementById('phoneError');
+  let ok = document.getElementById('phoneOk');
+  if(phone.value.length === 0){ phone.classList.remove('error','ok'); err.style.display='none'; ok.style.display='none'; }
+  else if(phone.value.length < 10){ phone.classList.add('error'); phone.classList.remove('ok'); err.style.display='block'; ok.style.display='none'; }
+  else if(phone.value.length === 10){ phone.classList.remove('error'); phone.classList.add('ok'); err.style.display='none'; ok.style.display='block'; }
+}
+function placeOrder(){
+  let name = document.getElementById('cname').value.trim();
+  let phone = document.getElementById('cphone').value.trim();
+  let add = document.getElementById('cadd').value.trim();
+  let food = document.getElementById('cfood').value;
+  let pay = document.getElementById('cpay').value;
+  let msg = document.getElementById('msg');
+  let details = document.getElementById('orderDetails');
+  if(name === ""){ msg.style.color="red"; msg.innerText="❌ Please enter your name first!"; return; }
+  if(phone.length !== 10){
+    msg.style.color="red";
+    msg.innerText="❌ Order will not be placed! Number must be 10 digits. You entered " + phone.length + " digits.";
+    document.getElementById('cphone').classList.add('error');
+    document.getElementById('phoneError').style.display='block';
+    alert("Order Failed! Mobile Number must be 10 digits. You entered " + phone.length + " digits.");
+    return;
+  }
+  if(!/^[6-9][0-9]{9}$/.test(phone)){ msg.style.color="red"; msg.innerText="❌ This number is not correct. Please enter a number starting with 6,7,8 or 9."; return; }
+  if(add === ""){ msg.style.color="red"; msg.innerText="❌ Please enter your address!"; return; }
+  let orderId = "RTB" + Math.floor(1000 + Math.random()*9000);
+  msg.style.color="green";
+  msg.innerText="✅ Order Confirmed! Thank you " + name + "!";
+  details.innerHTML = "<b>Order ID:</b> " + orderId + "<br><b>Food:</b> " + food + "<br><b>Payment:</b> " + pay + "<br><b>Phone:</b> " + phone + "<br>Runali will deliver in 30 Minutes! 🛵";
+  alert("✅ Order Confirmed! Order ID: " + orderId);
+}
+function orderOnWhatsApp(){
+  let phone = document.getElementById('cphone').value.trim();
+  if(phone.length !== 10){ alert("Please enter 10 digit number first, then WhatsApp Order will work!"); document.getElementById('order').scrollIntoView(); return; }
+  if(cart.length === 0){ alert("Please add something to Cart first!"); return; }
+  let msg = "Hi Runali! I want to order: " + cart.join(", ") + " Total: Rs." + total + " My Number: " + phone;
+  window.open("https://wa.me/919876543210?text=" + encodeURIComponent(msg), "_blank");
+}
+</script>
+</body>
+</html>
